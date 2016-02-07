@@ -2,8 +2,11 @@
 
 set -e
 
+# http://stackoverflow.com/a/1853993/460387
+for REPO; do true; done
+
 apt-get \
-  -o Dir::Etc::sourcelist="sources.list.d/m-doc.list" \
+  -o Dir::Etc::sourcelist="sources.list.d/${REPO}.list" \
   -o Dir::Etc::sourceparts="-" \
   -o APT::Get::List-Cleanup="0" \
   update
