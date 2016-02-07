@@ -1,0 +1,26 @@
+{
+  "package": {
+    "name": "apt-get-update-only",
+    "repo": "debian",
+    "subject": "m-doc",
+    "website_url": "https://github.com/m-doc/apt-get-update-only",
+    "issue_tracker_url": "https://github.com/m-doc/apt-get-update-only/issues",
+    "vcs_url": "https://github.com/m-doc/apt-get-update-only.git",
+    "licenses": [ "Apache-2.0" ]
+  },
+  "version": {
+    "name": "0.0.0"
+  },
+  "files": [
+    {
+      "includePattern": "../(.*0.0.0.*\.deb)",
+      "uploadPattern": "$1",
+      "matrixParams": {
+        "deb_distribution": "stable",
+        "deb_component": "main",
+        "deb_architecture": "all"
+      }
+    }
+  ],
+  "publish": true
+}
