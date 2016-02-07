@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+apt-get \
+  -o Dir::Etc::sourcelist="sources.list.d/m-doc.list" \
+  -o Dir::Etc::sourceparts="-" \
+  -o APT::Get::List-Cleanup="0" \
+  update
