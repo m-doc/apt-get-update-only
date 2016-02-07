@@ -2,11 +2,24 @@
 
 set -e
 
-# http://stackoverflow.com/a/1853993/460387
-for REPO; do true; done
+if [ "$#" -eq 0 ]; then
+    "E: no source part spefified"
+    exit 1
+fi
+
+ARGS=""
+if [ "$#" -gt 1 ]; then
+    ARGS=$(echo "$@" | cut -d' ' -f-$(expr "$#" - 1))
+fi
+
+SOURCE=$(echo "$@" | cut -d' ' -f"$#")
+case "$SOURCE" in -*)
+    ARGS="$ARGS $SOURCE"
+    SOURCE=""
+esac
 
 apt-get \
-  -o Dir::Etc::sourcelist="sources.list.d/${REPO}.list" \
-  -o Dir::Etc::sourceparts="-" \
+  -o Dir::Etc::SourceList="sources.list.d/${SOURCE}.list" \
+  -o Dir::Etc::SourceParts="-" \
   -o APT::Get::List-Cleanup="0" \
-  update
+  $ARGS update
