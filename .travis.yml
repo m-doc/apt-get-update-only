@@ -4,10 +4,11 @@ sudo: false
 addons:
   apt:
     packages:
+    - debhelper
     - dpkg-dev
 
 script:
-- dpkg-buildpackage
+- dpkg-buildpackage -us -uc
 
 notifications:
   webhooks:

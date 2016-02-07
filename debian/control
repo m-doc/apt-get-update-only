@@ -1,0 +1,9 @@
+Source: apt-get-update-only
+Maintainer: m-doc <info@m-doc.org>
+Section: admin
+Priority: optional
+Standards-Version: 3.9.7
+Build-Depends: debhelper (>= 9)
+
+Package: apt-get-update-only
+Architecture: all
