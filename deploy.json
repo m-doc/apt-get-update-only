@@ -13,7 +13,7 @@
   },
   "files": [
     {
-      "includePattern": "../(.*\.deb)",
+      "includePattern": "../(.*VERSION.*\.deb)",
       "uploadPattern": "$1",
       "matrixParams": {
         "deb_distribution": "stable",
