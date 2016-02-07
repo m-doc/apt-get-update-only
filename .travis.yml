@@ -8,6 +8,7 @@ addons:
     - dpkg-dev
 
 script:
+- sh update-version.sh
 - dpkg-buildpackage -us -uc
 
 deploy:

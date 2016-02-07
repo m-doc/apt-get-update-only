@@ -9,17 +9,16 @@
     "licenses": [ "Apache-2.0" ]
   },
   "version": {
-    "name": "0.0.0"
+    "name": "VERSION"
   },
   "files": [
     {
-      "includePattern": "../(.*0.0.0.*\.deb)",
+      "includePattern": "../(.*\.deb)",
       "uploadPattern": "$1",
       "matrixParams": {
         "deb_distribution": "stable",
         "deb_component": "main",
-        "deb_architecture": "all",
-        "override": 1
+        "deb_architecture": "all"
       }
     }
   ],

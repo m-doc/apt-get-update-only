@@ -1,4 +1,4 @@
-apt-get-update-only (0.0.0) stable; urgency=low
+apt-get-update-only (VERSION) stable; urgency=low
 
   * Initial release.
 
